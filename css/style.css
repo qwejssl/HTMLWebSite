@@ -1,14 +1,15 @@
 html {
 	box-sizing: border-box;
 	font-size: 24px;
+	scroll-behavior: smooth;
 }
 
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 a {
@@ -23,16 +24,23 @@ ul {
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding: 0 20px;
+}
+
+.header {
+	background: #fff;
+	transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+.header.is-scrolled {
+	box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
 }
 
 .header_inner {
-	align-items: center;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	min-height: 140px;
-	padding: 30px 0 30px 0;
+	padding: 30px 0;
 }
 
 .logo {
@@ -41,8 +49,8 @@ ul {
 
 .menu_list {
 	display: flex;
-	text-align: center;
 	gap: 65px;
+	text-align: center;
 }
 
 .user_actions {
@@ -71,8 +79,7 @@ ul {
 }
 
 .top_section-text {
-	margin-top: 20px;
-	margin-bottom: 50px;
+	margin: 20px 0 50px;
 	font-size: 20px;
 }
 
@@ -104,8 +111,8 @@ ul {
 }
 
 .clients {
-	background-color: #f7f2ea;
-	padding: 60px 0 60px 0;
+	background: #f7f2ea;
+	padding: 60px 0;
 	margin-bottom: 150px;
 }
 
@@ -180,11 +187,11 @@ ul {
 	padding: 12px 40px;
 	font-size: 20px;
 	font-weight: lighter;
-	background-color: transparent;
+	background: transparent;
 }
 
 .mail {
-	background-color: #f7f2ea;
+	background: #f7f2ea;
 	padding: 100px 0;
 	margin-bottom: 150px;
 }
@@ -211,11 +218,11 @@ ul {
 
 .mail_label {
 	display: flex;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 .mail_input {
-	background-color: transparent;
+	background: transparent;
 	border: none;
 	border-bottom: 1.5px solid #b8b58b;
 	outline: none;
@@ -227,7 +234,7 @@ ul {
 .mail_submit-btn {
 	font-size: 20px;
 	padding: 12px 40px;
-	background-color: #fff;
+	background: #fff;
 	margin-left: 25px;
 }
 
@@ -235,7 +242,7 @@ ul {
 	position: relative;
 	display: flex;
 	gap: 20px;
-	height: 55px;
+	min-height: 55px;
 }
 
 .checkbox {
@@ -275,7 +282,7 @@ ul {
 }
 
 .footer {
-	background-color: #f7f2ea;
+	background: #f7f2ea;
 	padding: 100px 0 20px;
 }
 
@@ -284,19 +291,13 @@ ul {
 	justify-content: space-between;
 }
 
-.products_title {
+.products_title,
+.company_title,
+.info_block-title {
 	margin-bottom: 50px;
 }
 
-.products_list-item {
-	font-size: 16px;
-	margin-bottom: 20px;
-}
-
-.company_title {
-	margin-bottom: 50px;
-}
-
+.products_list-item,
 .company_list-item {
 	font-size: 16px;
 	margin-bottom: 20px;
@@ -321,10 +322,6 @@ ul {
 
 .footer_info-block {
 	max-width: 270px;
-}
-
-.info_block-title {
-	margin-bottom: 50px;
 }
 
 .footer_info-text {
@@ -382,4 +379,41 @@ ul {
 
 .payments_list-item img {
 	display: block;
+}
+
+.form_msg {
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.form_msg.error {
+	color: #b00020;
+}
+
+.form_msg.success {
+	color: #2e7d32;
+}
+
+@media (max-width: 992px) {
+	.collection_list,
+	.clients_list {
+		flex-wrap: wrap;
+	}
+	.footer_inner {
+		flex-wrap: wrap;
+		gap: 40px;
+	}
+}
+
+@media (max-width: 576px) {
+	.menu_list {
+		gap: 24px;
+	}
+	.mail_inner {
+		flex-direction: column;
+	}
+	.footer_underinfo {
+		flex-direction: column;
+		gap: 20px;
+	}
 }
